@@ -1,0 +1,20 @@
+name: Keep Hugging Face Space Alive
+
+on:
+  schedule:
+    # 每6小时运行一次
+    - cron: '0 */6 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send HTTP Request
+        run: |
+          curl -sL https://seulgic-gemini-balance.hf.space
+      - name: Wait 30 seconds
+        run: sleep 30
+      - name: Send Second HTTP Request
+        run: |
+          curl -sL https://seulgic-gemini-balance.hf.space 
