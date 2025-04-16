@@ -3,7 +3,7 @@ name: Keep Hugging Face Space Alive
 on:
   schedule:
     # 每6小时运行一次
-    - cron: '0 */6 * * *'
+    - cron: '0 3 * * *'
   workflow_dispatch:  # 允许手动触发
 
 jobs:
